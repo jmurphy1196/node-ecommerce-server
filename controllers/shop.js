@@ -218,11 +218,12 @@ exports.getOrders = (req, res, next) => {
 };
 
 exports.deleteCartItem = (req, res, next) => {
+  console.log("this wa sran");
   const prodId = req.body.productId;
   req.user
     .deleteProductFromCart(prodId)
     .then((result) => {
-      res.redirect("/cart");
+      return res.redirect("/cart");
     })
     .catch((err) => {
       console.log(err);
