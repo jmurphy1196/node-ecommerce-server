@@ -22,7 +22,7 @@
             <div class="centered">
                 <button id="order-btn" class="btn">Order</button>
                 <script src="https://js.stripe.com/v3/"></script>
-                <script nonce="$RANDOM">
+                <script nonce="$RANDOM" unsafe-inline>
                     var stripe = Stripe(
                         "pk_test_51HQpJdCQYjrZIeTCV7Ba4wJjAbNxrPRemByk28KjaZrGUWc12Y2wUGSHsRDtg7RJuiK5sKxZAWlHM3Fh7LoITEfV00CeOmBG4b"
                         );
