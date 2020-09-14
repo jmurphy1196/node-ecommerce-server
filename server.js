@@ -21,8 +21,7 @@ const MongoDBStore = require("connect-mongodb-session")(session);
 //controller
 const { noPageFound, get500 } = require("./controllers/404");
 const mongoose = require("mongoose");
-const MONGODB_URI =
-  "mongodb+srv://jason:mZtUZlWxeBAlePho@shop.0tbby.mongodb.net/myshop?retryWrites=true&w=majority";
+const MONGODB_URI = `mongodb+srv://jason:${MONGO_PASSWORD}@shop.0tbby.mongodb.net/myshop?retryWrites=true&w=majority`;
 
 const store = new MongoDBStore({
   uri: MONGODB_URI,
