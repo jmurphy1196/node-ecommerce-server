@@ -126,10 +126,9 @@ mongoose
   })
   .then((result) => {
     console.log(result);
-    app.listen(8080,  () => {
+    app.listen(8080, () => {
       console.log("serer is running");
-    }),
-     
+    });
   })
   .catch((err) => {
     console.log(err);
