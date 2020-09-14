@@ -57,9 +57,6 @@ const accessLogStream = fs.createWriteStream(
   }
 );
 
-const privateKey = fs.readFileSync("server.key");
-const certificate = fs.readFileSync("server.cert");
-
 app.use(helmet());
 app.use(compression());
 app.use(
