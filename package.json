@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "start": "MONGO_USER=jason MONGO_PASSWORD=i8VrzgQSoDC00TrG STRIPE_KEY=sk_test_51HQpJdCQYjrZIeTCcsh9yIMo1BuJYYKbmQUsyaJ59TriPm9zFeKn3AewhTQzpb9IKvkJmaCKvbMAvBUUa6FyQp2o00MIGlfy99 EMAIL_PASSWORD=JMm@91077575 node server.js",
     "dev": "nodemon server.js"
   },
   "keywords": [],

@@ -21,7 +21,8 @@ const MongoDBStore = require("connect-mongodb-session")(session);
 //controller
 const { noPageFound, get500 } = require("./controllers/404");
 const mongoose = require("mongoose");
-const MONGODB_URI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@nodeshop.92ugt.gcp.mongodb.net/shop?authSource=admin&replicaSet=atlas-wq98dt-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true`;
+const MONGODB_URI =
+  "mongodb+srv://jason:rvnThRfC6yCalNX1@shop.0tbby.mongodb.net/myshop?retryWrites=true&w=majority";
 
 const store = new MongoDBStore({
   uri: MONGODB_URI,
@@ -119,9 +120,16 @@ app.use((error, req, res, next) => {
 });
 
 mongoose
-  .connect(MONGODB_URI)
+  .connect(MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then((result) => {
-    app.listen(process.env.PORT || 5000);
+    console.log(result);
+    app.listen(5000),
+      () => {
+        console.log("serer is running");
+      };
   })
   .catch((err) => {
     console.log(err);
