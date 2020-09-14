@@ -20,7 +20,7 @@ const deleteProduct = (btn) => {
     .catch((err) => console.log(err));
 };
 
-let deleteBtns = document.querySelectorAll("delete-btn");
+let deleteBtns = document.querySelectorAll(".delete-btn");
 
 deleteBtns = Array.from(deleteBtns);
 
