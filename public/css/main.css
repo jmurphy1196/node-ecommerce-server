@@ -113,7 +113,7 @@ form {
 .mobile-nav__item button {
   font: inherit;
   text-decoration: none;
-  color: black;
+  color: purple;
   font-size: 1.5rem;
   padding: 0.5rem 2rem;
   background: transparent;
@@ -126,7 +126,7 @@ form {
 .mobile-nav__item a.active,
 .mobile-nav__item button:hover,
 .mobile-nav__item button:active {
-  background: #00695c;
+  background: plum;
   color: white;
   border-radius: 3px;
 }
