@@ -71,7 +71,6 @@
         >Products</a
       >
     </li>
-    <% if(isAuthenticated) { %>
     <li class="mobile-nav__item">
       <a class="<%= path === '/cart' ? 'active' : '' %>" href="/cart">Cart</a>
     </li>
@@ -81,15 +80,22 @@
       >
     </li>
     <% if(!isAuthenticated){ %>
-    <li class="main-header__item">
+    <li class="mobile-nav__item">
       <a class="<%= path === '/login' ? 'active' : '' %>" href="/login"
         >Login</a
       >
     </li>
-    <li class="main-header__item">
+    <li class="mobile-nav__item">
       <a class="<%= path === '/signup' ? 'active' : '' %>" href="/signup"
         >Signup</a
       >
+    </li>
+    <% } %> <% if(isAuthenticated === true) { %>
+    <li class="mobile-nav__item">
+      <form action="/logout" method="POST">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+        <button type="submit">Logout</button>
+      </form>
     </li>
     <% } %> <% if(isAdmin) { %>
     <li class="mobile-nav__item">
