@@ -20,25 +20,29 @@ const deleteProduct = (btn) => {
     .catch((err) => console.log(err));
 };
 
-const deleteBtn = document.getElementById("delete-btn");
+let deleteBtns = document.querySelectorAll("delete-btn");
 
-deleteBtn.addEventListener("click", () => {
-  const productId = deleteBtn.parentNode.querySelector("[name=productId]")
-    .value;
-  const csrf = deleteBtn.parentNode.querySelector("[name=_csrf]").value;
-  const productElement = deleteBtn.closest("article");
+deleteBtns = Array.from(deleteBtns);
 
-  fetch(`/admin/product/${productId}`, {
-    method: "DELETE",
-    headers: {
-      "csrf-token": csrf,
-    },
-  })
-    .then((result) => {
-      return result.json();
+deleteBtns.forEach((deleteBtn) => {
+  deleteBtn.addEventListener("click", () => {
+    let productId = deleteBtn.parentNode.querySelector("[name=productId]")
+      .value;
+    let csrf = deleteBtn.parentNode.querySelector("[name=_csrf]").value;
+    let productElement = deleteBtn.closest("article");
+
+    fetch(`/admin/product/${productId}`, {
+      method: "DELETE",
+      headers: {
+        "csrf-token": csrf,
+      },
     })
-    .then((data) => {
-      productElement.parentNode.removeChild(productElement);
-    })
-    .catch((err) => console.log(err));
+      .then((result) => {
+        return result.json();
+      })
+      .then((data) => {
+        productElement.parentNode.removeChild(productElement);
+      })
+      .catch((err) => console.log(err));
+  });
 });
