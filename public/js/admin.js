@@ -1,5 +1,3 @@
-const { delete } = require("../../routes/auth");
-
 const deleteProduct = (btn) => {
   console.log("clicked!");
 
