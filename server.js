@@ -106,6 +106,11 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use((req, res, next) => {
+  res.setHeader("Content-Security-Policy", "script-src 'nonce-2726c7f26c'");
+  return next();
+});
+
 app.use("/admin", adminRoutes);
 app.use(shopeRoutes);
 app.use(authRoutes);
